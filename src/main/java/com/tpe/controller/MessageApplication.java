@@ -18,7 +18,7 @@ public class MessageApplication {
             mailService.sendMessage(message);
          */
 
-        Repository repository = new FileRepository();
+        Repository repository = new FileRepository();   // 1 obj and we can use it in multiple classes anywhere anytime we need it
 
         MessageService messageService = new MailService(repository);
         messageService.sendMessage(message);

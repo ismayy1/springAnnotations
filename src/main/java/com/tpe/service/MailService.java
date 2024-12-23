@@ -8,4 +8,9 @@ public class MailService implements MessageService {
     public void sendMessage(Message message) {
         System.out.println("Your message is being sent as email!");
     }
+
+    @Override
+    public void saveMessage(Message message) {
+
+    }
 }

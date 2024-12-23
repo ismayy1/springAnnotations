@@ -1,6 +1,7 @@
 package com.tpe.controller;
 
 import com.tpe.domain.Message;
+import com.tpe.repository.DBRepository;
 import com.tpe.repository.FileRepository;
 import com.tpe.repository.Repository;
 import com.tpe.service.MailService;
@@ -18,7 +19,7 @@ public class MessageApplication {
             mailService.sendMessage(message);
          */
 
-        Repository repository = new FileRepository();   // 1 obj and we can use it in multiple classes anywhere anytime we need it
+        Repository repository = new DBRepository();   // 1 obj and we can use it in multiple classes anywhere anytime we need it
 
         MessageService messageService = new MailService(repository);
         messageService.sendMessage(message);

@@ -22,6 +22,7 @@
             <artifactId>spring-context</artifactId>
             <version>${springframework.version}</version>
         </dependency>
+
         <dependency>
             <groupId>javax.annotation</groupId>
             <artifactId>javax.annotation-api</artifactId>

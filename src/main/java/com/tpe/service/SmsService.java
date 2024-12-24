@@ -3,7 +3,8 @@ package com.tpe.service;
 import com.tpe.domain.Message;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component  // When used, objects of this class will be created and managed by Spring.
+// Those objects will be called Spring Beans.
 public class SmsService implements MessageService {
     @Override
     public void sendMessage(Message message) {

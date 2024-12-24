@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component  // When used, objects of this class will be created and managed by Spring.
 // Those objects will be called Spring Beans.
 //@Scope("singleton") // DEFAULT
-@Scope("prototype")
+@Scope("prototype") // can be useful when testing
 public class SmsService implements MessageService {
 
 //    FIELD INJECTION

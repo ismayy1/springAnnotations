@@ -19,6 +19,7 @@ public class MessageApplication {
             mailService.sendMessage(message);
          */
 
+//        This is the dependency
         Repository repository = new DBRepository();   // 1 obj and we can use it in multiple classes anywhere anytime we need it
 
         MessageService messageService = new MailService(repository);

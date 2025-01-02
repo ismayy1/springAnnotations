@@ -78,6 +78,11 @@ public class MessageApplicationSpring {
 //        2. Prototype -> Everytime we want to get a Bean, a new Bean will be created.
 //                        Spring won't remove these Beans, we'll need to remove them ourselves
 
+        System.out.println("============================================");
+        SlackService service8 = context.getBean(SlackService.class);
+        service8.printContacts();
+        System.out.println("============================================");
+
         context.close();
         System.out.println("Context is closed!");
         context.getBean(SmsService.class);

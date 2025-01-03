@@ -22,16 +22,17 @@ public class MessageApplicationSpring {
 //        When user demands a Bean, injects the dependency into the bean then sends it.
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);
 
-        /*
         MessageService service1 = context.getBean(SmsService.class); // we didn't use "new" keyword
         service1.sendMessage(message);
 
+        /*
         MessageService service2 = context.getBean(SlackService.class);
         service2.sendMessage(message);
+         */
 
         MessageService service3 = context.getBean("smsService", MessageService.class);
         service3.sendMessage(message);
-         */
+
 
         /*
         MessageService service4 = context.getBean("slack_service", MessageService.class);
@@ -63,15 +64,15 @@ public class MessageApplicationSpring {
         MessageService service6 = context.getBean(SmsService.class);
         MessageService service7 = context.getBean(SmsService.class);
 
-        if (service6 == service7) {
-            System.out.println("They're the same obj");
-            System.out.println(service6);
-            System.out.println(service7);
-        } else {
-            System.out.println("They're different SMS service obj");
-            System.out.println(service6);
-            System.out.println(service7);
-        }
+//        if (service6 == service7) {
+//            System.out.println("They're the same obj");
+//            System.out.println(service6);
+//            System.out.println(service7);
+//        } else {
+//            System.out.println("They're different SMS service obj");
+//            System.out.println(service6);
+//            System.out.println(service7);
+//        }
 
 //        Bean Scope
 //        1. Singleton -> (Default Scope): only 1 Bean of obj will be created and used
@@ -83,9 +84,14 @@ public class MessageApplicationSpring {
         service8.printContacts();
         System.out.println("============================================");
 
+//        System.out.println("============================================");
+//        SlackService service8 = context.getBean(SlackService.class);
+//        service8.printContacts();
+//        System.out.println("============================================");
+
         context.close();
         System.out.println("Context is closed!");
-        context.getBean(SmsService.class);
+//        context.getBean(SmsService.class);
 //        We can't get a Bean after closing the context
     }
 }

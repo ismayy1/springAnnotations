@@ -7,11 +7,24 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component  // When used, objects of this class will be created and managed by Spring.
 // Those objects will be called Spring Beans.
 //@Scope("singleton") // DEFAULT
 @Scope("prototype") // can be useful when testing
 public class SmsService implements MessageService {
+
+    @PostConstruct
+    public void postConstruct() {
+        System.out.println("======> SmsService object is created.");
+    }
+
+    @PreDestroy
+    public void preDestroy() {
+        System.out.println("======> SmsService obn=ject is being removed.");
+    }
 
 //    FIELD INJECTION
 //    @Autowired  // Automatic dependency injection

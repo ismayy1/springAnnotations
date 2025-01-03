@@ -15,6 +15,7 @@ import java.util.Random;
 // by default, ComponentScan annotation takes the location of the class it's used in.
 // So, com.tpe in this case, would be the default path
 @PropertySource("classpath:application.properties")
+// classpath refers to this case, would be the default path
 public class AppConfiguration {
 
     @Autowired
